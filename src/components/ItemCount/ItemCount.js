@@ -1,7 +1,7 @@
 import React, {Profiler, useState} from 'react'
 import Button  from 'react-bootstrap/Button'
 
-export default function ItemCounts({stock, onAdd}) {
+export default function ItemCount({stock, onAdd}) {
     const [count, setCount]= useState(1);  
     function onChange (e){
         let value= e.target.value;
@@ -30,8 +30,9 @@ export default function ItemCounts({stock, onAdd}) {
     return (
         <div>
             <button onClick={restar}> - </button>
-            <input onChange={onChange} type= "number" value={count}/> 
+            <input onChange={onChange} type= "number" value={count} style={{maxWidth: '3rem', textAlign: 'center'}}/>
             <button onClick={sumar}> + </button>
+            <br></br> 
         <Button disabled={stock <= 0} onClick= {()=> onAdd(count)} variant="primary">{stock <= 0? 'agotado': 'comprar'}</Button>
         </div>
     )

@@ -1,9 +1,8 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 
-export default function Cards({ name, precio, stock }) {
+export default function Cards({ name, precio, stock, img }) {
     function onAdd(count){
         console.log(`se compraron ${count} unidades`);
         alert(`se compraron ${count} unidades`)
@@ -11,7 +10,7 @@ export default function Cards({ name, precio, stock }) {
     return (
         <div>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={img} style={{maxHeight: '18rem'}}/>
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
