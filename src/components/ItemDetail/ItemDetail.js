@@ -1,10 +1,9 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Image from 'react-bootstrap/Image'
-import Button from 'react-bootstrap/Button'
-import ItemCount from '../ItemCount/ItemCount'
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
+import ItemCount from '../ItemCount/ItemCount';
 
 export const ItemDetail = ({item}) => {
     console.log(item)
@@ -20,8 +19,8 @@ export const ItemDetail = ({item}) => {
                 {/* Descripción y demás detalles */}
                 <Col>
                     <p className='h3' style={{
-                        'text-transform': 'uppercase',
-                        'font-size': '20px'
+                        textTransform: 'uppercase',
+                        fontSize: '20px'
                         }}>
                         {item.name}
                     </p>

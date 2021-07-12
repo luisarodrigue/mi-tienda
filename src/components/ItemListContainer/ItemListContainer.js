@@ -7,7 +7,8 @@ export const ItemListContainer = (props) => {
 
     useEffect(() => {
         (async function(){
-            let aux = await getFormatProducts('reloj');
+            let aux = await getFormatProducts('zapato');
+            console.log(aux);
             setProducts(aux);
         })();
     }, []);

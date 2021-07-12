@@ -1,4 +1,4 @@
-import React, {Profiler, useState} from 'react'
+import React, {useState} from 'react'
 import Button  from 'react-bootstrap/Button'
 
 export default function ItemCount({stock, onAdd}) {
