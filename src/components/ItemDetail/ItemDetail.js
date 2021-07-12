@@ -4,9 +4,20 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import ItemCount from '../ItemCount/ItemCount';
+import Button from 'react-bootstrap/esm/Button';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const ItemDetail = ({item}) => {
     console.log(item)
+
+    const [compra, setCompra] = useState(false);
+
+    function onAdd(count){
+        setCompra(count);
+        console.log(`se han agregado ${count} ${item.name} al carrito.`);
+    }
+    
     return (
         <Container>
             <Row xs={1} md={2}>
@@ -37,7 +48,11 @@ export const ItemDetail = ({item}) => {
                             </p>
                         </div>
                         <div className='d-flex'>
-                            <ItemCount stock={item.stock} onAdd={(n) => alert(`comprad@s ${n} unidades`)}/>
+                            {
+                                compra?
+                                 (<Link to={'/cart'}><Button>Terminar Compra</Button></Link>) :
+                                 (<ItemCount stock={item.stock} onAdd={onAdd}/>)
+                            }
                         </div>
                     </div>
                     <hr></hr>
