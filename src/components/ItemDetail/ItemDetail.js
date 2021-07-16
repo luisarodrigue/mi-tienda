@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -7,15 +7,18 @@ import ItemCount from '../ItemCount/ItemCount';
 import Button from 'react-bootstrap/esm/Button';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 
 export const ItemDetail = ({item}) => {
     console.log(item)
 
     const [compra, setCompra] = useState(false);
+    const cart = useContext(CartContext);
 
     function onAdd(count){
         setCompra(count);
         console.log(`se han agregado ${count} ${item.name} al carrito.`);
+        cart.addItem({item, quantity: count});
     }
     
     return (
