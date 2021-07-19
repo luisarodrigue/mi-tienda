@@ -17,15 +17,12 @@ export function CartProvider({value = [], children}) {
     }
 
     function addItem(item) {
-        console.log(item);
         const prod = item && item.item;
         if(isInCart(prod && prod.id)){
             console.log(`${prod && prod.name} no pudo ser añadido ya que ya existe`);
             return;
         }
         setCarrito([...carrito, item]);
-        console.log(`an item was added: ${prod}`);
-        console.log(carrito)
     }
 
     function removeItem(id){
@@ -41,6 +38,10 @@ export function CartProvider({value = [], children}) {
 
     function clear() {
         setCarrito([]);
+    }
+
+    function isEmpty(){
+        return carrito.length===0;
     }
     return (
         <CartContext.Provider value={{carrito, addItem, clear, removeItem, isInCart, cartSize: carrito.length}}>

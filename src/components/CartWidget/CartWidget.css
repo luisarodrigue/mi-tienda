@@ -1,0 +1,19 @@
+div.count {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: -8px;
+    font-size: 12px;
+    border-radius: 50%;
+    background-color: coral;
+    width: 15;
+    height: 15;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.carrito {
+    color: rgb(65, 65, 65);
+}

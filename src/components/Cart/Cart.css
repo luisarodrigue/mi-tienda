@@ -1,0 +1,28 @@
+
+div.cart {
+    padding: 8;
+}
+
+div.cart img {
+    height: 120px;
+    width: 120px;
+}
+
+div.cart p {
+    margin-top: 0;
+    display: block;
+    line-height: 1;
+    box-sizing: border-box;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.cart-item div {
+    display: inline-block;
+}
+
+.cart-item b {
+    display: flex;
+}

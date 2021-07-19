@@ -1,9 +1,10 @@
 import './App.css';
-import { NavBar } from './components/NavBar/NavBar.js';
+import { MyNav } from './components/MyNav/MyNav';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import {Switch, BrowserRouter, Route} from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <nav>  
-            <NavBar/>
+            <MyNav/>
           </nav>
 
           <main>
@@ -21,6 +22,9 @@ function App() {
               </Route>
               <Route path="/item/:id">
                 <ItemDetailContainer></ItemDetailContainer>
+              </Route>
+              <Route>
+                <Cart/>
               </Route>
             </Switch>
           </main>
