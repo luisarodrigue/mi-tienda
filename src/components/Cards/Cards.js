@@ -12,7 +12,7 @@ export default function Cards({id, name, precio, stock, img }) {
         <div>
             <Link to={`item/${id}`} style={{color: 'black', textDecorationLine: 'none'}}>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={img} style={{maxHeight: '18rem'}}/>
+                <Card.Img variant="top" src={img} style={{maxHeight: '18rem'}} alt='no img detected'/>
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>

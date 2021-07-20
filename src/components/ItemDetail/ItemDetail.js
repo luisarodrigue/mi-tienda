@@ -27,7 +27,7 @@ export const ItemDetail = ({item}) => {
 
                 {/* Imagen o carrousel */}
                 <Col>
-                    <Image src={item.img} fluid></Image>
+                    <Image src={item.img} alt='no img detected' fluid></Image>
                 </Col>
 
                 {/* Descripción y demás detalles */}
