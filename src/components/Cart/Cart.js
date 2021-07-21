@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 import CartItem from './ItemCart/CartItem';
 import ListGroup from 'react-bootstrap/esm/ListGroup';
+import Button from 'react-bootstrap/esm/Button';
 
 function Cart() {
 
@@ -41,7 +42,10 @@ function Cart() {
                             </ListGroup>
                         </div>
                     </Row>
-                    <Row>SubTotal: ${cart.subTotal()}</Row>
+                    <Row>
+                        SubTotal: ${cart.subTotal()}
+                        <Button>Terminar compra</Button>
+                    </Row>
                 </>)
                 }
             </Container>
