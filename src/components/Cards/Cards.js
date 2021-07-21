@@ -10,11 +10,14 @@ export default function Cards({id, name, precio, stock, img }) {
     }
     return (
         <div>
-            <Link to={`item/${id}`} style={{color: 'black', textDecorationLine: 'none'}}>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={img} style={{maxHeight: '18rem'}} alt='no img detected'/>
+                <Link to={`item/${id}`} style={{color: 'black', textDecorationLine: 'none'}}>
+                    <Card.Img variant="top" src={img} style={{maxHeight: '18rem'}} alt='no img detected'/>
+                </Link>
                 <Card.Body>
-                    <Card.Title>{name}</Card.Title>
+                    <Link to={`item/${id}`} style={{textDecorationLine: 'none'}}>
+                        <Card.Title>{name}</Card.Title>
+                    </Link>
                     <Card.Text>
                        ${precio} stock: {stock}
                     </Card.Text>
@@ -22,7 +25,6 @@ export default function Cards({id, name, precio, stock, img }) {
                     
                 </Card.Body>
             </Card>
-        </Link>
         </div>
     )
 }

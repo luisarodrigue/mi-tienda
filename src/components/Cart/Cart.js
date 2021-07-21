@@ -1,6 +1,5 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 import './Cart.css';
 import { useContext, useEffect, useState } from 'react';
@@ -8,7 +7,7 @@ import { CartContext } from '../../context/CartContext';
 import CartItem from './ItemCart/CartItem';
 import ListGroup from 'react-bootstrap/esm/ListGroup';
 
-function Cart({}) {
+function Cart() {
 
     const cart = useContext(CartContext);
     const [lista, setLista] = useState([]);
@@ -34,7 +33,7 @@ function Cart({}) {
                 {(cart.cartSize===0)? (<>
                     <h3>NO HAY ITEMS EN EL CARRITO.</h3>
                     <Link to='/'><h3>Volver al Lobby</h3></Link>
-                </>) : (
+                </>) : (<>
                     <Row className="justify-content-center">
                         <div className="position-relative cart">
                             <ListGroup>
@@ -42,7 +41,8 @@ function Cart({}) {
                             </ListGroup>
                         </div>
                     </Row>
-                )
+                    <Row>SubTotal: ${cart.subTotal()}</Row>
+                </>)
                 }
             </Container>
         </div>

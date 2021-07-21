@@ -40,11 +40,15 @@ export function CartProvider({value = [], children}) {
         setCarrito([]);
     }
 
-    function isEmpty(){
-        return carrito.length===0;
+    function subTotal(){
+        const cart = carrito.slice();
+        return cart.reduce((acum, item)=>{
+            return acum + item.item.precio * item.quantity;
+        }, 0);
     }
+
     return (
-        <CartContext.Provider value={{carrito, addItem, clear, removeItem, isInCart, cartSize: carrito.length}}>
+        <CartContext.Provider value={{carrito, addItem, clear, removeItem, isInCart, subTotal, cartSize: carrito.length}}>
             {children}
         </CartContext.Provider>
     )
